@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title data-lang-key="meta-title">CircleCropper — Instant Circle Cropper</title>
+  <meta name="title" content="Circle Crop Image | Free Online Round Image Cropper">
+  <meta name="description"
+    content="The fastest way to crop images into perfect circles. Free online tool for profile pictures and circular designs. 100% private: all processing happens in your browser.">
+  <meta name="keywords"
+    content="circle crop image, round image cropper, circular photo crop, profile picture maker, online image cropper, no upload cropper">
+  <meta name="author" content="Circle Crop Image">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Circle Crop Image - Fast, Private, Perfect Circles">
+  <meta property="og:description"
+    content="Crop your photos into perfect circles online. No signup, no server uploads, 100% privacy in your browser.">
+  <link rel="icon" type="image/svg+xml" href="./assets/logo-circleCropper.svg">
+  <meta name="theme-color" content="#82eda6">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header role="banner">
+    <nav class="navigation" aria-label="Main Navigation">
+      <div class="nav-left">
+        <!-- Logo button -->
+        <button class="logo">
+          CircleCr<span>
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+              <g id="SVGRepo_iconCarrier">
+                <path
+                  d="M22 19H13C9.22876 19 7.34315 19 6.17157 17.8284C5.51839 17.1752 5.22937 16.3001 5.10149 15M5 11V2"
+                  stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path>
+                <path
+                  d="M8 5H11C14.7712 5 16.6569 5 17.8284 6.17157C18.4816 6.82475 18.7706 7.69989 18.8985 9M2 5H5M19 19V22M19 13V16"
+                  stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path>
+              </g>
+            </svg>
+          </span>pper
+        </button>
+      </div>
+
+      <div class="nav-right">
+        <div class="lang-wrapper">
+          <label class="visually-hidden" for="lang-select">Language</label>
+          <select id="lang-select" name="language" aria-label="Select language" title="Select language">
+            <option value="english" selected>English</option>
+            <option value="urdu" selected>اردو</option>
+            <option value="spanish" selected>Español</option>
+          </select>
+        </div>
+    </nav>
+  </header>
+
+  <main id="main-content" class="section-one">
+    <div class="main-content-inner">
+      <div class="divider"></div>
+
+      <!-- App title / greeting -->
+      <section class="app-title-greeting">
+        <article>meet circlecropper</article>
+      </section>
+
+      <!-- Hero section: headline, subtitle, CTAs -->
+      <section class="hero-section">
+        <h1 class="hero-title">Crop images into perfect circles. Instantly. </h1>
+        <p class="hero-subtitle">Free online circle image cropper. No signup. <br />Works on all devices. </p>
+
+        <div class="hero-btns">
+          <a href="https://github.com/byllzz" target="_blank" rel="noopener noreferrer" class="nav-btn" id="get-started"
+            type="button">github</a>
+          <a href="https://buymeacoffee.com/byllzz" target="_blank" rel="noopener noreferrer" class="nav-btn"
+            id="coffee-btn" type="button">
+            <span aria-hidden="true"></span>
+            Buy&nbsp;me&nbsp;coffee
+          </a>
+        </div>
+      </section>
+
+      <!-- Tool section: cropping UI -->
+      <section class="tool" aria-label="Image Cropping Tool">
+        <div class="tool-main-container">
+
+          <!-- Sidebar with demo images -->
+          <aside class="demo-sidebar">
+            <p class="demo-label">Try Demo</p>
+            <div class="demo-images">
+              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=600&fit=crop"
+                class="demo-thumb" alt="Demo 1">
+              <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=600&h=600&fit=crop"
+                class="demo-thumb" alt="Demo 2">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&h=600&fit=crop"
+                class="demo-thumb" alt="Demo 3">
+            </div>
+          </aside>
+
+          <!-- Main tool content: uploader, preview, controls -->
+          <div class="tool-content">
+            <div class="upload-section">
+              <!-- Upload area label -->
+              <label for="inputImage" class="upload-area">
+                <div class="upload-btn" role="button" aria-hidden="true">
+                  <!-- svg omitted for brevity -->
+                  <svg class="btn-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path
+                      d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M17 8L12 3L7 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round"></path>
+                    <path d="M12 3V15" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round"></path>
+                  </svg>
+                  <span data-lang-key="upload-img-btn">Upload Image</span>
+                </div>
+              </label>
+
+              <!-- Hidden file input (triggered by label) -->
+              <input type="file" id="inputImage" accept="image/*" aria-label="Upload an image to crop">
+              <span class="status-msg">Yet, No Image Uploaded !</span>
+            </div>
+
+            <!-- Cropping area (hidden until an image is uploaded) -->
+            <section class="crop-img-area hide">
+
+              <!-- File / preview area with overlays -->
+              <section class="file-area">
+                <img src="" alt="Image to be cropped" class="uploaded-img-holder">
+                <div class="dim-overlay" aria-hidden="true"></div>
+                <div class="crop-overlay"></div>
+              </section>
+
+              <!-- Zoom range control -->
+              <input type="range" max="3" step="0.01" min="0.7" value="1" class="range-field" aria-label="Zoom scale">
+
+              <!-- Download / crop button (keyboard accessible) -->
+              <div class="download-btn" role="button" tabindex="0" aria-label="Crop and download">
+                <!-- svg omitted for brevity -->
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path
+                    d="M13 4H8.8C7.11984 4 6.27976 4 5.63803 4.32698C5.07354 4.6146 4.6146 5.07354 4.32698 5.63803C4 6.27976 4 7.11984 4 8.8V15.2C4 16.8802 4 17.7202 4.32698 18.362C4.6146 18.9265 5.07354 19.3854 5.63803 19.673C6.27976 20 7.11984 20 8.8 20H15.2C16.8802 20 17.7202 20 18.362 19.673C18.9265 19.3854 19.3854 18.9265 19.673 18.362C20 17.7202 20 16.8802 20 15.2V11"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path
+                    d="M4 16L8.29289 11.7071C8.68342 11.3166 9.31658 11.3166 9.70711 11.7071L13 15M13 15L15.7929 12.2071C16.1834 11.8166 16.8166 11.8166 17.2071 12.2071L20 15M13 15L15.25 17.25"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M18 3V8M18 8L16 6M18 8L20 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                </svg>
+                <span data-lang-key="download-btn-text">Crop & Download</span>
+              </div>
+
+              <!-- Export quality selection -->
+              <select id="export-quality" class="maggi-select" aria-label="Export quality">
+                <option value="original">Original Size</option>
+                <option value="3840">4K Ultra HD</option>
+                <option value="1080">1080p Full HD</option>
+              </select>
+            </section>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="./scripts/languages.js" defer></script>
+  <script src="./scripts/script.js" defer></script>
+</body>
+
+</html>

@@ -12,13 +12,13 @@ CircleCropper is a tiny, privacy-first web tool for producing perfectly cropped 
     <img src="https://img.shields.io/badge/Author-Bilal%20Malik-9B72FF.svg?style=flat" />
   </a>
 <a href="https://github.com/byllzz/snippetkit/releases">
-  <img src="https://img.shields.io/badge/Latest%20Release-16%20Dec%202025-9B72FF.svg" alt="Latest Release Badge" />
+  <img src="https://img.shields.io/badge/Latest%20Release-03%20Jan%202026-9B72FF.svg" alt="Latest Release Badge" />
 </a>
 </p>
 
 <br>
 
-[![Visit CircleCropper](https://img.shields.io/badge/View-SnippetKit-9B72FF?style=flat)](https://circlecropper.netlify.app)
+[![Visit CircleCropper](https://img.shields.io/badge/View-CircleCropper-9B72FF?style=flat)](https://circlecropper.netlify.app)
 
 <img width="100%" alt="CircleCropper Preview" src="./assets/preview.png" />
 

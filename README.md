@@ -1,4 +1,4 @@
-# <a href="https://circlecropper.netlify.app" target="_blank">CircleCropper — Crop & Download Circular Images</a>
+# <a href="https://circlecropper.vercel.app" target="_blank">CircleCropper — Crop & Download Circular Images</a>
 
 CircleCropper is a tiny, privacy-first web tool for producing perfectly cropped circular images. Upload or pick a demo photo, position and zoom with a live preview, then export a high-quality circular PNG (transparent) or SVG mask. Everything runs in your browser — no uploads, no accounts, and no tracking. Fast, simple, and built for avatars, badges, and UI placeholders.
 
@@ -18,7 +18,7 @@ CircleCropper is a tiny, privacy-first web tool for producing perfectly cropped 
 
 <br>
 
-[![Visit CircleCropper](https://img.shields.io/badge/View-CircleCropper-9B72FF?style=flat)](https://circlecropper.netlify.app)
+[![Visit CircleCropper](https://img.shields.io/badge/View-CircleCropper-9B72FF?style=flat)](https://circlecropper.vercel.app)
 
 <img width="100%" alt="CircleCropper Preview" src="./assets/preview.png" />
 

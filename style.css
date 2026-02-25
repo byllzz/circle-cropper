@@ -344,26 +344,11 @@ main {
   background-color: var(--color-accent-yellow);
 }
 
-#coffee-btn {
+#portfolio-btn {
   padding: 20px;
   background-color: var(--color-white);
   overflow: visible;
 }
-
-#coffee-btn::before {
-  content: "REQUEST";
-  position: absolute;
-  bottom: -10px;
-  right: -15px;
-  transform: rotate(-15deg);
-  border: 2px solid var(--color-border);
-  font-family: var(--font-display);
-  color: var(--color-border);
-  padding: 0px 5px;
-  background-color: var(--color-white);
-  border-radius: 5px;
-}
-
 .tool-main-container {
   display: flex;
   flex-direction: row;

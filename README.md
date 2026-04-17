@@ -1,4 +1,4 @@
-# <a href="https://circlecropper.vercel.app" target="_blank">CircleCropper — Crop & Download Circular Images</a>
+# <a href="https://circlecropper.vercel.app" target="_blank">CircleCropper - Crop & Download Circular Images</a>
 
 CircleCropper is a tiny, privacy-first web tool for producing perfectly cropped circular images. Upload or pick a demo photo, position and zoom with a live preview, then export a high-quality circular PNG (transparent) or SVG mask. Everything runs in your browser — no uploads, no accounts, and no tracking. Fast, simple, and built for avatars, badges, and UI placeholders.
 
@@ -24,7 +24,7 @@ CircleCropper is a tiny, privacy-first web tool for producing perfectly cropped 
 
 :star: Star me on GitHub — it helps!
 
-# ✨ Features
+#  Features
 
 <p align="left"> ✔️ Live Circular Preview (real-time) <br> ✔️ Client-side Cropping: keeps images private <br> ✔️ Drag & Position: move image under circular mask <br> ✔️ Zoom Controls: slider + pinch-to-zoom on touch <br> ✔️ Export PNG/SVG: transparent PNGs & SVG masks <br> ✔️ Export Presets: Original / 1080p / 4K sizes <br> ✔️ Keyboard & ARIA: accessible controls and shortcuts <br> ✔️ Demo Thumbnails: try sample images instantly <br> ✔️ Predictable Downloads: single-click Crop & Download <br> ✔️ Minimal & Fast: tiny bundle, no backend required </p>
 
@@ -39,5 +39,6 @@ CircleCropper is a tiny, privacy-first web tool for producing perfectly cropped 
 # License 📄
 
 This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE) file for details.
+# Suggestions
 
-Please contact me at bilalmlkdev@gmail.com if you have any feedback or suggestions. :star: Star it, if you like it!
+Please contact me at **bilalmlkdev@gmail.com** if you have any feedback or suggestions. :star: Star it, if you like it!

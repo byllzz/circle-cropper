@@ -221,7 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
       downloadBtn.classList.add('is-processing');
 
       const statusSpan = downloadBtn.querySelector('span');
-      if (statusSpan) statusSpan.innerText = 'Processing 4K Image...';
+      if (statusSpan) statusSpan.innerText = 'Processing Image...';
 
       setTimeout(() => {
         try {
@@ -281,7 +281,7 @@ document.addEventListener('DOMContentLoaded', () => {
           link.click();
         } catch (err) {
           console.error('Export failed:', err);
-          alert('The image is too large for your browser to process at this quality.');
+          alert("Please Upload yours original Image as demo images can't be downloaded.");
         } finally {
           downloadBtn.classList.remove('is-processing');
           downloadBtn.innerHTML = originalContent;

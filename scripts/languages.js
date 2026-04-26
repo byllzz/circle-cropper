@@ -1,6 +1,6 @@
 const langData = {
   english: {
-    'meta-title': 'CircleCropper — Instant Circle Cropper',
+    'meta-title': 'CircleCropper | Crop Images into perfect circles',
     'app-desc-top': 'meet circlecropper',
     'upload-img-btn': 'Upload Image',
     'download-btn-text': 'Crop & Download',
@@ -13,7 +13,7 @@ const langData = {
   },
 
   urdu: {
-    'meta-title': 'CircleCropper — فوری دائرہ وار کراپ کریں',
+    'meta-title': 'CircleCropper | فوری دائرہ وار کراپ کریں',
     'app-desc-top': 'CircleCropper سے ملو',
     'upload-img-btn': 'تصویر اپ لوڈ کریں',
     'download-btn-text': 'کراپ کریں اور ڈاؤن لوڈ کریں',
@@ -27,7 +27,7 @@ const langData = {
   },
 
   spanish: {
-    'meta-title': 'CircleCropper — Recorta círculos perfectos al instante',
+    'meta-title': 'CircleCropper | Recorta círculos perfectos al instante',
     'app-desc-top': 'Conoce CircleCropper',
     'upload-img-btn': 'Subir imagen',
     'download-btn-text': 'Recortar y descargar',
@@ -40,7 +40,7 @@ const langData = {
     processing: 'Procesando imagen 4K...',
   },
   french: {
-    'meta-title': 'CircleCropper — Recadrez en cercle instantanément',
+    'meta-title': 'CircleCropper | Recadrez en cercle instantanément',
     'app-desc-top': 'Découvrez CircleCropper',
     'upload-img-btn': 'Téléverser une image',
     'download-btn-text': 'Rogner et télécharger',
@@ -54,7 +54,7 @@ const langData = {
   },
 
   german: {
-    'meta-title': 'CircleCropper — Perfekte Kreise sofort zuschneiden',
+    'meta-title': 'CircleCropper | Perfekte Kreise sofort zuschneiden',
     'app-desc-top': 'Lerne CircleCropper kennen',
     'upload-img-btn': 'Bild hochladen',
     'download-btn-text': 'Zuschneiden & Herunterladen',
@@ -68,7 +68,7 @@ const langData = {
   },
 
   hindi: {
-    'meta-title': 'CircleCropper — तुरंत गोल क्रॉप करें',
+    'meta-title': 'CircleCropper | तुरंत गोल क्रॉप करें',
     'app-desc-top': 'CircleCropper से मिलें',
     'upload-img-btn': 'इमेज अपलोड करें',
     'download-btn-text': 'क्रॉप करें और डाउनलोड करें',
@@ -81,7 +81,7 @@ const langData = {
   },
 
   arabic: {
-    'meta-title': 'CircleCropper — قص الصور بدائرة فوراً',
+    'meta-title': 'CircleCropper | قص الصور بدائرة فوراً',
     'app-desc-top': 'تعرف على CircleCropper',
     'upload-img-btn': 'تحميل صورة',
     'download-btn-text': 'قص وتنزيل',
@@ -94,7 +94,7 @@ const langData = {
   },
 
   turkish: {
-    'meta-title': 'CircleCropper — Anında daire şeklinde kırp',
+    'meta-title': 'CircleCropper | Anında daire şeklinde kırp',
     'app-desc-top': 'CircleCropper ile tanış',
     'upload-img-btn': 'Resim yükle',
     'download-btn-text': 'Kırp ve indir',
@@ -107,7 +107,7 @@ const langData = {
   },
 
   portuguese: {
-    'meta-title': 'CircleCropper — Recorte em círculo instantâneo',
+    'meta-title': 'CircleCropper | Recorte em círculo instantâneo',
     'app-desc-top': 'Conheça o CircleCropper',
     'upload-img-btn': 'Enviar imagem',
     'download-btn-text': 'Recortar e baixar',
@@ -121,7 +121,7 @@ const langData = {
   },
 
   russian: {
-    'meta-title': 'CircleCropper — Мгновенная круговая обрезка',
+    'meta-title': 'CircleCropper | Мгновенная круговая обрезка',
     'app-desc-top': 'Познакомьтесь с CircleCropper',
     'upload-img-btn': 'Загрузить изображение',
     'download-btn-text': 'Обрезать и скачать',
@@ -135,7 +135,7 @@ const langData = {
   },
 
   chinese: {
-    'meta-title': 'CircleCropper — 即时圆形裁剪',
+    'meta-title': 'CircleCropper | 即时圆形裁剪',
     'app-desc-top': '认识 CircleCropper',
     'upload-img-btn': '上传图片',
     'download-btn-text': '裁剪并下载',
@@ -148,7 +148,7 @@ const langData = {
   },
 
   japanese: {
-    'meta-title': 'CircleCropper — 瞬時に円形トリミング',
+    'meta-title': 'CircleCropper | 瞬時に円形トリミング',
     'app-desc-top': 'CircleCropperへようこそ',
     'upload-img-btn': '画像をアップロード',
     'download-btn-text': 'トリミングしてダウンロード',
@@ -161,7 +161,7 @@ const langData = {
   },
 
   indonesian: {
-    'meta-title': 'CircleCropper — Potong lingkaran instan',
+    'meta-title': 'CircleCropper | Potong lingkaran instan',
     'app-desc-top': 'Kenali CircleCropper',
     'upload-img-btn': 'Unggah gambar',
     'download-btn-text': 'Potong & Unduh',

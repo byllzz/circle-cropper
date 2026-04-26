@@ -205,6 +205,7 @@ header {
   background: transparent;
   border-radius: 10px;
   pointer-events: auto;
+
 }
 
 #lang-select {
@@ -815,6 +816,9 @@ select option {
 }
 
 @media (max-width: 600px) {
+  .navigation {
+    gap:3rem;
+  }
   .hero-title {
     font-size: 40px;
     letter-spacing: 1px;

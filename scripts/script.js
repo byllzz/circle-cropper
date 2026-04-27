@@ -24,6 +24,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const maxScale = 3;
   const zoomSpeed = 0.0055;
 
+  // pinch-to-zoom: track two pointers for pinch gesture
+  const activePointers = new Map();
+  let lastPinchDist = null;
+
+  function getPinchDist() {
+    const pts = [...activePointers.values()];
+    const dx = pts[0].clientX - pts[1].clientX;
+    const dy = pts[0].clientY - pts[1].clientY;
+    return Math.sqrt(dx * dx + dy * dy);
+  }
+
   function getRects() {
     return {
       containerRect: fileArea.getBoundingClientRect(),
@@ -80,18 +91,44 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // shared loadImage() removes duplicated reset logic
+  function loadImage(src) {
+    const cropWrapper = document.querySelector('.crop-img-area');
+    if (!cropWrapper) return;
+    cropWrapper.classList.remove('hide');
+    currentScale = 1;
+    if (imgRangeSize) imgRangeSize.value = 1;
+    uploadedImg.style.transform = 'scale(1)';
+    // uses addEventListener instead of onload to avoid overwrite
+    const onLoad = () => {
+      ensureInitialPosition();
+      uploadedImg.removeEventListener('load', onLoad);
+    };
+    uploadedImg.addEventListener('load', onLoad);
+    uploadedImg.src = src;
+  }
+
   function onPointerDown(e) {
     if (e.pointerType === 'mouse' && e.button !== 0) return;
 
-    const style = getComputedStyle(uploadedImg);
-    startImgLeft = parseFloat(style.left) || 0;
-    startImgTop = parseFloat(style.top) || 0;
+    //  track pointer for pinch
+    activePointers.set(e.pointerId, e);
 
-    startPointerX = e.clientX;
-    startPointerY = e.clientY;
+    if (activePointers.size === 1) {
+      const style = getComputedStyle(uploadedImg);
+      startImgLeft = parseFloat(style.left) || 0;
+      startImgTop = parseFloat(style.top) || 0;
+      startPointerX = e.clientX;
+      startPointerY = e.clientY;
+      isDragging = true;
+      fileArea.classList.add('grabbing');
+    } else if (activePointers.size === 2) {
+      // entering pinch — stop drag
+      isDragging = false;
+      fileArea.classList.remove('grabbing');
+      lastPinchDist = getPinchDist();
+    }
 
-    isDragging = true;
-    fileArea.classList.add('grabbing');
     try {
       fileArea.setPointerCapture(e.pointerId);
     } catch (err) {
@@ -100,6 +137,22 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function onPointerMove(e) {
+    // update pointer map
+    if (activePointers.has(e.pointerId)) {
+      activePointers.set(e.pointerId, e);
+    }
+
+    // pinch-to-zoom when 2 fingers are active
+    if (activePointers.size === 2 && lastPinchDist !== null) {
+      const newDist = getPinchDist();
+      const delta = newDist - lastPinchDist;
+      lastPinchDist = newDist;
+      currentScale = Math.min(maxScale, Math.max(minScale, currentScale + delta * zoomSpeed * 5));
+      if (imgRangeSize) imgRangeSize.value = currentScale.toFixed(3);
+      applyScale();
+      return;
+    }
+
     if (!isDragging) return;
     const dx = (e.clientX - startPointerX) / currentScale;
     const dy = (e.clientY - startPointerY) / currentScale;
@@ -108,6 +161,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function onPointerUp(e) {
+    // clean up pointer map
+    activePointers.delete(e.pointerId);
+    lastPinchDist = activePointers.size === 2 ? getPinchDist() : null;
+
     if (!isDragging) return;
     isDragging = false;
     fileArea.classList.remove('grabbing');
@@ -169,15 +226,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (inputFile) {
     inputFile.addEventListener('change', e => {
-      const cropWrapper = document.querySelector('.crop-img-area');
-      if (!cropWrapper) return;
       const file = e.target.files && e.target.files[0];
       if (!file) return;
-
-      cropWrapper.classList.remove('hide');
-      currentScale = 1;
-      if (imgRangeSize) imgRangeSize.value = 1;
-      uploadedImg.style.transform = 'scale(1)';
 
       if (uploadedImg._objectURL) {
         URL.revokeObjectURL(uploadedImg._objectURL);
@@ -185,8 +235,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       uploadedImg._objectURL = URL.createObjectURL(file);
-      uploadedImg.src = uploadedImg._objectURL;
-      uploadedImg.onload = () => ensureInitialPosition();
+      // use shared loadImage()
+      loadImage(uploadedImg._objectURL);
     });
   }
 
@@ -195,17 +245,8 @@ document.addEventListener('DOMContentLoaded', () => {
       thumb.addEventListener('click', () => {
         const src = thumb.getAttribute('src') || thumb.dataset.src;
         if (!src) return;
-        const cropWrapper = document.querySelector('.crop-img-area');
-        if (!cropWrapper) return;
-
-        cropWrapper.classList.remove('hide');
-        currentScale = 1;
-        if (imgRangeSize) imgRangeSize.value = 1;
-        uploadedImg.style.transform = 'scale(1)';
-
-        uploadedImg.src = src;
-        uploadedImg.onload = () => ensureInitialPosition();
-
+        //  use shared loadImage()
+        loadImage(src);
         // quick visual feedback
         thumb.classList.add('thumb-active');
         setTimeout(() => thumb.classList.remove('thumb-active'), 300);
@@ -218,6 +259,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!uploadedImg.src) return;
 
       const originalContent = downloadBtn.innerHTML;
+      // disable button during processing to prevent double-clicks
+      downloadBtn.disabled = true;
       downloadBtn.classList.add('is-processing');
 
       const statusSpan = downloadBtn.querySelector('span');
@@ -238,7 +281,11 @@ document.addEventListener('DOMContentLoaded', () => {
               uploadedImg.naturalHeight || imgRect.height,
             );
           } else {
-            targetWidth = parseInt(selection, 10) || Math.max(imgRect.width, imgRect.height);
+            // guard against NaN from unexpected select values
+            const parsed = parseInt(selection, 10);
+            targetWidth = !isNaN(parsed) && parsed > 0
+              ? parsed
+              : Math.max(imgRect.width, imgRect.height);
           }
 
           const multiplier = targetWidth / cropRect.width;
@@ -254,16 +301,18 @@ document.addEventListener('DOMContentLoaded', () => {
           const x = (imgRect.left - cropRect.left) * multiplier;
           const y = (imgRect.top - cropRect.top) * multiplier;
 
+          // factoring currentScale into render dimensions so
+          // export matches exactly what the user sees in the preview
           const naturalRatio = (uploadedImg.naturalWidth || 1) / (uploadedImg.naturalHeight || 1);
           const visibleRatio = imgRect.width / imgRect.height;
 
           let renderW, renderH;
           if (naturalRatio > visibleRatio) {
-            renderW = imgRect.width * multiplier;
-            renderH = (imgRect.width / naturalRatio) * multiplier;
+            renderW = imgRect.width * multiplier * currentScale;
+            renderH = (imgRect.width / naturalRatio) * multiplier * currentScale;
           } else {
-            renderH = imgRect.height * multiplier;
-            renderW = imgRect.height * naturalRatio * multiplier;
+            renderH = imgRect.height * multiplier * currentScale;
+            renderW = imgRect.height * naturalRatio * multiplier * currentScale;
           }
 
           const finalX = x + (imgRect.width * multiplier - renderW) / 2;
@@ -283,6 +332,8 @@ document.addEventListener('DOMContentLoaded', () => {
           console.error('Export failed:', err);
           alert("Please Upload yours original Image as demo images can't be downloaded.");
         } finally {
+          // re-enable button and restore content in finally
+          downloadBtn.disabled = false;
           downloadBtn.classList.remove('is-processing');
           downloadBtn.innerHTML = originalContent;
         }

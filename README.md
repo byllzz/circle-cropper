@@ -1,6 +1,6 @@
-# <a href="https://circlecropper.vercel.app" target="_blank">CircleCropper - Crop & Download Circular Images</a>
+# <a href="https://circlecropper.vercel.app" target="_blank">CircleCropper — Crop & Download Circular Images</a>
 
-CircleCropper is a tiny, privacy-first web tool for producing perfectly cropped circular images. Upload or pick a demo photo, position and zoom with a live preview, then export a high-quality circular PNG (transparent) or SVG mask. Everything runs in your browser — no uploads, no accounts, and no tracking. Fast, simple, and built for avatars, badges, and UI placeholders.
+ CircleCropper is a tiny, privacy-first web tool for producing perfectly cropped circular images. Upload or pick a demo photo, position and zoom with a live preview, then export a high-quality circular PNG (transparent) or SVG mask. Everything runs in your browser — no uploads, no accounts, and no tracking. Fast, simple, and built for avatars, badges, and UI placeholders
 
 <p align="left">
   <a href="./LICENSE">
@@ -11,34 +11,105 @@ CircleCropper is a tiny, privacy-first web tool for producing perfectly cropped 
   <a href="https://github.com/byllzz">
     <img src="https://img.shields.io/badge/Author-Bilal%20Malik-9B72FF.svg?style=flat" />
   </a>
-<a href="https://github.com/byllzz/snippetkit/releases">
-  <img src="https://img.shields.io/badge/Latest%20Release-03%20Jan%202026-9B72FF.svg" alt="Latest Release Badge" />
-</a>
+  <a href="https://github.com/byllzz/circlecropper/releases">
+    <img src="https://img.shields.io/badge/Latest%20Release-03%20Jan%202026-9B72FF.svg" />
+  </a>
 </p>
 
-<br>
+<br />
 
 [![Visit CircleCropper](https://img.shields.io/badge/View-CircleCropper-9B72FF?style=flat)](https://circlecropper.vercel.app)
 
 <img width="100%" alt="CircleCropper Preview" src="./assets/preview.png" />
 
-:star: Star me on GitHub — it helps!
+> ⭐ **Star the repo if you find it useful!**
 
-#  Features
+---
 
-<p align="left"> ✔️ Live Circular Preview (real-time) <br> ✔️ Client-side Cropping: keeps images private <br> ✔️ Drag & Position: move image under circular mask <br> ✔️ Zoom Controls: slider + pinch-to-zoom on touch <br> ✔️ Export PNG/SVG: transparent PNGs & SVG masks <br> ✔️ Export Presets: Original / 1080p / 4K sizes <br> ✔️ Keyboard & ARIA: accessible controls and shortcuts <br> ✔️ Demo Thumbnails: try sample images instantly <br> ✔️ Predictable Downloads: single-click Crop & Download <br> ✔️ Minimal & Fast: tiny bundle, no backend required </p>
+```
+Upload → Position → Zoom → Export ✓
+```
 
-## Installation
+---
 
-- [<b>GitHub</b>](https://github.com/byllzz/snippetkit) - Clone the repository to get the project files.
-- [<b>VSCode / Any Code Editor</b>](https://code.visualstudio.com/) - To open and edit the code.
-- [<b>Live Server</b>](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) - Optional, to view your changes live in the browser.
-- [<b>Browser</b>](https://www.google.com/chrome/) - Open <code>index.html</code> to run the app.
+## What It Does
 
+CircleCropper lets you turn any image into a perfectly cropped circle - right in your browser. No uploads to any server, no account needed, no tracking. Just open it, drop your image, and get a clean circular PNG or SVG mask in seconds.
 
-# License 📄
+Built for profile pictures, avatars, badges, and UI placeholders.
 
-This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE) file for details.
-# Feedback
+---
 
-Please contact me at **bilalmlkdev@gmail.com** if you have any feedback or suggestions. :star: Star it, if you like it!
+## Features
+
+```
+✔  Live circular preview         real-time feedback as you move & zoom
+✔  Drag to position              move image freely under the circle mask
+✔  Zoom controls                 slider + pinch-to-zoom on touch devices
+✔  PNG export                    transparent background, crisp edges
+✔  SVG mask export               scalable vector output
+✔  Export presets                Original · 1080p · 4K
+✔  Demo thumbnails               try it instantly, no upload needed
+✔  Keyboard & ARIA               fully accessible controls & shortcuts
+✔  Single-click download         no extra steps, no popups
+✔  100% client-side              your images never leave your device
+```
+
+---
+
+## Privacy
+
+CircleCropper processes everything locally in your browser using the Canvas API. Your images are **never uploaded, stored, or transmitted** anywhere. Close the tab and everything is gone.
+
+---
+
+## Installation & Setup
+
+This is a plain HTML/CSS/JS project — no build step required.
+
+### Option 1 — Just open it
+
+```bash
+git clone https://github.com/byllzz/circlecropper.git
+cd circlecropper
+# open index.html in your browser
+```
+
+### Option 2 — Live Server (recommended for development)
+
+1. Open the folder in [VS Code](https://code.visualstudio.com/)
+2. Install the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension
+3. Right-click `index.html` → **Open with Live Server**
+
+No Node.js, no `npm install`, no config.
+
+---
+
+## Export Options
+
+| Format | Background | Best For |
+|---|---|---|
+| PNG — Original | Transparent | Keeping native resolution |
+| PNG — 1080p | Transparent | Social media, profiles |
+| PNG — 4K | Transparent | High-res UI / print |
+| SVG Mask | Vector | Scalable web use |
+
+---
+
+## Tech
+
+Vanilla HTML · CSS · JavaScript · Canvas API · No frameworks · No dependencies
+
+---
+
+## License 📄
+
+MIT - see [LICENSE](./LICENSE) for details.
+
+---
+
+## Feedback
+
+Got a suggestion or found a bug? Reach out at **bilalmlkdev@gmail.com**
+
+⭐ Star the repo if it saved you time — it genuinely helps!
